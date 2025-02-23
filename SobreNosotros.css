@@ -1,0 +1,155 @@
+/* Navbar */
+.navbar {
+    background-color: #eaeaea;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 40px; /* Más pequeño */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px; /* Más compacto */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 14px; /* Texto más pequeño */
+}
+
+.navbar ul li a:hover {
+    color: #6a0dad;
+}
+
+/* Contenido principal */
+.contenido {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px; /* Márgenes más grandes */
+    background: #f5f5f5;
+    box-sizing: border-box;
+}
+
+.columna {
+    width: 48%;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: purple;
+    font-size: 32px; /* Más pequeño */
+    margin-top: 0;
+}
+
+p {
+    font-size: 16px; /* Texto más compacto */
+    line-height: 1.4;
+    text-align: justify;
+}
+
+/* Imagen centrada */
+.imagen-centro img {
+    width: 80%;
+    max-width: 600px; /* Limita el tamaño máximo */
+    height: auto;
+}
+
+/* Contenedor de información */
+.contenedor-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px 60px; /* Márgenes más grandes */
+    background: #f5f5f5;
+}
+
+.info-box {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px; /* Más compacto */
+    border-radius: 10px; /* Esquinas más pequeñas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.icon {
+    font-size: 40px; /* Icono más pequeño */
+    margin-right: 10px;
+}
+
+h4 {
+    font-size: 22px; /* Más compacto */
+    color: purple;
+    margin: 0;
+}
+
+/* Imagen final centrada con franja blanca */
+.imagen-final {
+    display: flex;              /* Usa Flexbox */
+    justify-content: center;    /* Centra horizontalmente */
+    align-items: center;        /* Centra verticalmente (si es necesario) */
+    background: white;          /* Franja blanca */
+    padding: 40px 0;            /* Espaciado superior e inferior */
+    width: 100%;                /* Franja ocupa todo el ancho */
+    box-sizing: border-box;     /* Evita que el padding afecte el ancho */
+    margin: 0;                  /* Asegúrate de no tener márgenes */
+}
+
+.imagen-final img {
+    max-width: 600px;           /* Limita el tamaño máximo */
+    width: 100%;                /* Permite que la imagen sea responsiva */
+    height: auto;               /* Mantiene la proporción */
+    display: block;             /* Evita espacios adicionales debajo de la imagen */
+}
+/* Footer */
+.footer {
+    background: white; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    display: flex; /* Distribuye elementos horizontalmente */
+    justify-content: space-between; /* Texto a los extremos */
+    align-items: center; /* Alineación vertical */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra superior */
+}
+
+/* Contenedor del footer */
+.footer-container {
+    width: 100%; /* Ocupa todo el ancho */
+    display: flex;
+    justify-content: space-between; /* Texto a los extremos */
+    align-items: center; /* Alinea verticalmente */
+}
+
+.whatsapp-icon {
+    position: fixed;         /* Fija el ícono en la pantalla */
+    bottom: 20px;            /* Lo posiciona 20px desde abajo */
+    right: 20px;             /* Lo posiciona 20px desde la derecha */
+    z-index: 1000;           /* Asegura que esté por encima de otros elementos */
+}
+
+.whatsapp-icon img {
+    width: 50px;             /* Ajusta el tamaño del ícono */
+    height: auto;            /* Mantiene la proporción */
+    border-radius: 50%;      /* Hace el ícono circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+    transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.1);   /* Hace zoom al pasar el mouse */
+}
+
+
