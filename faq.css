@@ -1,3 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #eaeaea;
+    padding: 20px;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo{
+    height: 50px; /* Ajusta la altura del logo */
+    width: 50px;
+}
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
 H1{
     color: rgb(70, 35, 122);
     font-size: 15px;
@@ -37,7 +72,7 @@ th{
     text-align: center; /* Centra el contenido dentro del contenedor */
 }
 
-img {
+.imgFresas {
     max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
     display: block; /* La imagen debe ser un bloque para que funcione margin auto */
     margin: 0 auto; /* Centra la imagen */

@@ -18,6 +18,7 @@ body {
 }
 .navbar .logo img {
     height: 50px; /* Ajusta la altura del logo */
+    width: 50px;
 }
 .navbar ul {
     list-style: none;
