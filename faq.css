@@ -1,0 +1,92 @@
+H1{
+    color: rgb(70, 35, 122);
+    font-size: 15px;
+    text-align: center;
+    font-family: "Manrope", serif;
+}
+H2{
+    color:rgb(70, 35, 122);
+    font-size: 65px;
+    font-family: "Manrope", serif;
+    text-align: center;
+
+}
+table{ 
+    width: 60%;
+    margin: 0 auto;
+    border-collapse: collapse; 
+    text-align: center;
+    
+}
+td{
+    border: 1px solid orange; /* Bordes verdes */
+    padding: 10px;
+    text-align: left;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    line-height: var(--ast-body-line-height, 1.5em);
+}
+th{
+    border: 1px solid orange; /* Bordes verdes */
+    padding: 8px;
+    text-align: center;
+    font-family: "Manrope", serif;
+}
+
+.container {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+
+img {
+    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+    display: block; /* La imagen debe ser un bloque para que funcione margin auto */
+    margin: 0 auto; /* Centra la imagen */
+    width: 60%; /* Ajusta el tamaño de la imagen si es necesario */
+}
+h3{
+    color: orange;
+    font-size: 30px;
+    text-align: center;
+    font-family: "Manrope", serif;
+}
+h4{
+    color: rgb(70, 35, 122);
+    font-size: 62px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-align: center;
+    line-height: 1.3em;
+}
+h5{
+    color: rgb(3, 3, 3);
+    font-size: 20px;
+    font-family: "Manrope", serif;
+    text-align: center;
+}
+button{
+    text-align: center;padding: 10px 20px; /* Tamaño del botón */
+    font-size: 15px;
+    padding: 15px 40px;
+    display: block; /* Convierte el botón en un elemento de bloque */
+    margin: 0 auto;
+    background-color: blueviolet;
+    border: none;
+    cursor: pointer;
+    color:  white;
+}
+
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-family: "Manrope", serif
+}
+
+ol {
+    list-style: none;
+}
+div{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-family:'Work Sans', sans-serif;
+}
