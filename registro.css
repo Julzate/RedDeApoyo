@@ -26,6 +26,8 @@ body {
 
 .navbar .logo img {
     height: 50px;
+    border-radius: 50%;
+
 }
 
 .navbar ul {
@@ -35,14 +37,17 @@ body {
 }
 
 .navbar ul li a {
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     color: #000000;
     font-weight: bold;
     transition: color 0.3s;
+    transition: font-size 0.3s ease;
 }
 
 .navbar ul li a:hover {
     color: #428709; /* Verde oscuro al pasar el mouse */
+    font-size: 20px;
 }
 
 /* Header principal */
