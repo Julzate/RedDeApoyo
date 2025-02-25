@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
-    text-align: center;
+    text-align: center;    
 }
 
 /* Navbar */
@@ -15,10 +15,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .navbar .logo img {
     height: 50px; /* Ajusta la altura del logo */
     width: 50px;
+    border-radius: 50%;
 }
 .navbar ul {
     list-style: none;
@@ -35,6 +39,12 @@ body {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    transition: font-size 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #6a0dad;
+    font-size: 18px;
 }
 
 /* Sección contacto */

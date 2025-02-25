@@ -7,14 +7,16 @@ body{
 
 .navbar {
     background-color: #eaeaea;
-    padding: 20px;
+    padding: 15px;
     text-align: right;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .navbar .logo img {
-    height: 50px; /* Ajusta la altura del logo */
+    height: 50px;
+    border-radius: 50%;
+
 }
 .navbar ul {
     list-style: none;
@@ -28,10 +30,20 @@ body{
 }
 
 .navbar ul li a {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
     text-decoration: none;
     color: black;
     font-weight: bold;
+    transition: color 0.3s;
+    transition: font-size 0.3s ease;
 }
+
+.navbar ul li a:hover {
+    color: #6a0dad; 
+    font-size: 18px;
+}
+
 
 .hero{
     z-index: 1;

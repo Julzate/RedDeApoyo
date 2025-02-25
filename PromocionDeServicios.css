@@ -6,6 +6,51 @@ body {
     background-color: #f9f9f9;
     color: #333;
 }
+
+/* Navbar */
+.navbar {
+    background-color: #eaeaea;   /* Color de fondo */
+    padding: 15px;               /* Espaciado interno */
+    display: flex;               /* Usa flexbox para alineación */
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+    align-items: center;         /* Centra verticalmente */
+    position: sticky;            /* Navbar fija al hacer scroll */
+    top: 0;                      /* Se queda en la parte superior */
+    z-index: 1000;               /* Se asegura de estar sobre otros elementos */
+}
+
+
+.navbar .logo img {
+    height: 50px;                /* Ajusta la altura del logo */
+    border-radius: 50%;
+}
+
+/* Lista de enlaces */
+.navbar ul {
+    list-style: none;            /* Quita los puntos de la lista */
+    padding: 0;                  /* Elimina el padding por defecto */
+    margin: 0;                   /* Elimina el margen por defecto */
+    display: flex;               /* Flexbox para los enlaces */
+    gap: 20px;                   /* Espacio uniforme entre los elementos */
+}
+
+/* Estilo de los enlaces */
+.navbar ul li a {
+    font-family: Arial, sans-serif;
+    text-decoration: none;       /* Quita el subrayado */
+    color: black;                /* Color del texto */
+    font-weight: bold;           /* Texto en negrita */
+    transition: color 0.3s;      /* Transición suave al cambiar el color */
+    transition: font-size 0.3s ease;
+}
+
+/* Efecto hover */
+.navbar ul li a:hover {
+    color: #6a0dad;              /* Cambia a morado al pasar el mouse */
+    font-size: 18px;
+}
+
+
 header {
     padding: 20px;
     color: #6a0dad;
@@ -145,42 +190,4 @@ footer {
 
 .whatsapp-icon img:hover {
     transform: scale(1.1);   /* Hace zoom al pasar el mouse */
-}
-/* Navbar */
-.navbar {
-    background-color: #eaeaea;   /* Color de fondo */
-    padding: 20px;               /* Espaciado interno */
-    display: flex;               /* Usa flexbox para alineación */
-    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
-    align-items: center;         /* Centra verticalmente */
-    position: sticky;            /* Navbar fija al hacer scroll */
-    top: 0;                      /* Se queda en la parte superior */
-    z-index: 1000;               /* Se asegura de estar sobre otros elementos */
-}
-
-/* Logo */
-.navbar .logo img {
-    height: 50px;                /* Ajusta la altura del logo */
-}
-
-/* Lista de enlaces */
-.navbar ul {
-    list-style: none;            /* Quita los puntos de la lista */
-    padding: 0;                  /* Elimina el padding por defecto */
-    margin: 0;                   /* Elimina el margen por defecto */
-    display: flex;               /* Flexbox para los enlaces */
-    gap: 20px;                   /* Espacio uniforme entre los elementos */
-}
-
-/* Estilo de los enlaces */
-.navbar ul li a {
-    text-decoration: none;       /* Quita el subrayado */
-    color: black;                /* Color del texto */
-    font-weight: bold;           /* Texto en negrita */
-    transition: color 0.3s;      /* Transición suave al cambiar el color */
-}
-
-/* Efecto hover */
-.navbar ul li a:hover {
-    color: #6a0dad;              /* Cambia a morado al pasar el mouse */
 }
