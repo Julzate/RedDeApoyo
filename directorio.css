@@ -1,0 +1,359 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    background-color: #f5f5dc; /* Beige claro para el fondo */
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #eaeaea;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0 0 10px 10px;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #428709; /* Verde oscuro al pasar el mouse */
+}
+
+/* Header principal */
+.main-header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f5f5dc; /* Beige para el encabezado */
+    border-bottom: 2px solid #428709; /* Borde verde */
+}
+
+.main-header h1 {
+    color: #000000;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.main-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.main-buttons button {
+    padding: 10px 20px;
+    background-color: #428709; /* Verde por defecto */
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+}
+
+.main-buttons button.btn-active {
+    background-color: #8bc34a; /* Verde claro para botón activo */
+}
+
+.main-buttons button:hover {
+    background-color: #8bc34a; /* Verde claro al pasar el mouse */
+}
+
+/* Búsqueda y filtrado */
+.search-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    display: flex;
+    width: 80%;
+    max-width: 800px;
+    gap: 10px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #428709;
+    border-radius: 20px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 16px;
+}
+
+.category-filter select {
+    padding: 10px 15px;
+    border: 1px solid #428709;
+    border-radius: 20px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+/* Contenido principal */
+.main-content {
+    padding: 20px;
+}
+
+.directory-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Listado de directorios - AJUSTADO */
+.directory-list {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cambiado a 2 columnas */
+    gap: 15px;
+}
+
+.directory-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 180px; /* Tarjetas más grandes */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Para posicionar la etiqueta de categoría */
+}
+
+.directory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.directory-card.active {
+    border: 2px solid #8bc34a;
+    background-color: #f0f8e6;
+}
+
+.directory-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #428709;
+}
+
+/* Etiqueta de categoría - AJUSTADA */
+.category-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    background-color: #8bc34a;
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px; /* Más pequeña */
+}
+
+.directory-card p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card-footer {
+    font-size: 14px;
+    color: #666;
+    margin-top: auto; /* Empuja al footer al fondo de la tarjeta */
+}
+
+/* Detalle del directorio */
+.directory-detail {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-height: 500px;
+    position: sticky;
+    top: 100px;
+    overflow-y: auto; /* Añadido para permitir scroll si el contenido es largo */
+    max-height: calc(100vh - 150px); /* Altura máxima para evitar que sea muy largo */
+}
+
+.detail-empty-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #666;
+    font-style: italic;
+}
+
+.detail-content h2 {
+    color: #428709;
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.detail-contact {
+    margin: 25px 0;
+}
+
+.detail-contact p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+/* Emoji para detalles de contacto */
+.emoji {
+    font-size: 20px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.detail-contact a {
+    color: #428709;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.detail-contact a:hover {
+    color: #8bc34a;
+    text-decoration: underline;
+}
+
+.detail-description {
+    margin-bottom: 25px;
+}
+
+.detail-description p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.detail-map {
+    margin-top: 20px;
+}
+
+.detail-map img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-height: 250px;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #666;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-icon img {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* No resultados de búsqueda */
+.no-results {
+    grid-column: 1 / -1; /* Ocupar todas las columnas */
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .directory-container {
+        flex-direction: column;
+    }
+    
+    .directory-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .directory-detail {
+        position: static;
+        max-height: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        gap: 10px;
+    }
+    
+    .directory-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-bar {
+        flex-direction: column;
+        width: 100%;
+    }
+}

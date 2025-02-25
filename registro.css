@@ -1,0 +1,528 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    background-color: #f5f5dc; /* Beige claro para el fondo */
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #eaeaea;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0 0 10px 10px;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #428709; /* Verde oscuro al pasar el mouse */
+}
+
+/* Header principal */
+.main-header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f5f5dc; /* Beige para el encabezado */
+    border-bottom: 2px solid #428709; /* Borde verde */
+}
+
+.main-header h1 {
+    color: #000000;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.main-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.main-buttons button {
+    padding: 10px 20px;
+    background-color: #428709; /* Verde por defecto */
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+}
+
+.main-buttons button.btn-active {
+    background-color: #8bc34a; /* Verde claro para botón activo */
+}
+
+.main-buttons button:hover {
+    background-color: #8bc34a; /* Verde claro al pasar el mouse */
+}
+
+/* Contenido principal */
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para el formulario de registro */
+.registro-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+/* Navegación de pasos */
+.steps-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.steps-nav::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e0e0e0;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #428709;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.step-text {
+    font-size: 18px;
+    color: #428709;
+    font-weight: bold;
+}
+
+/* Secciones del formulario */
+.form-sections {
+    position: relative;
+    min-height: 400px;
+}
+
+.form-section {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.form-section.active {
+    display: block;
+    z-index: 5;
+}
+
+.form-section h2 {
+    color: #428709;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Botones de navegación del formulario */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-anterior,
+.btn-siguiente,
+.btn-finalizar {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.btn-anterior {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.btn-anterior:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-siguiente,
+.btn-finalizar {
+    background-color: #428709;
+    color: white;
+}
+
+.btn-anterior:hover:not(:disabled) {
+    background-color: #e0e0e0;
+}
+
+.btn-siguiente:hover,
+.btn-finalizar:hover {
+    background-color: #8bc34a;
+}
+
+/* Áreas de subida de archivos */
+.upload-area,
+.upload-product-area {
+    border: 2px dashed #428709;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.upload-area:hover,
+.upload-product-area:hover {
+    background-color: rgba(66, 135, 9, 0.05);
+}
+
+.upload-icon {
+    margin-bottom: 10px;
+}
+
+.upload-text {
+    color: #333;
+    font-size: 16px;
+}
+
+.upload-format {
+    color: #666;
+    font-size: 14px;
+}
+
+.file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-product-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    gap: 10px;
+}
+
+.product-images-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.product-images-preview .image-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-images-preview .image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-images-preview .image-preview .remove-image {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Modal de confirmación */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1100;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+    animation: modal-open 0.3s ease-out;
+}
+
+@keyframes modal-open {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+.success-icon {
+    margin-bottom: 20px;
+}
+
+.modal h2 {
+    color: #428709;
+    margin-bottom: 15px;
+}
+
+.modal p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-directorio,
+.btn-home {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.btn-directorio {
+    background-color: #428709;
+    color: white;
+}
+
+.btn-home {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.btn-directorio:hover {
+    background-color: #8bc34a;
+}
+
+.btn-home:hover {
+    background-color: #e0e0e0;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #666;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-icon img {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Para mostrar las 3 facetas en la interfaz */
+.form-sections {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.form-section {
+    position: relative;
+    width: calc(33.333% - 14px);
+    opacity: 0.6;
+    transition: opacity 0.3s, transform 0.3s;
+    display: block;
+    z-index: 1;
+}
+
+.form-section.active {
+    opacity: 1;
+    transform: scale(1.02);
+    z-index: 5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .form-section {
+        width: 100%;
+        margin-bottom: 20px;
+        position: static;
+        display: none;
+    }
+    
+    .form-section.active {
+        display: block;
+    }
+    
+    .steps-nav {
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .step {
+        min-width: 120px;
+    }
+    
+    .navbar ul {
+        gap: 10px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+}

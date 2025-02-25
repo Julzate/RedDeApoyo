@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio de Emprendedores - Valle de Aburrá</title>
+    <link rel="stylesheet" href="directorio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+    <script src="directorio.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/Logo.webp" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="./SobreNosotros.html">Sobre nosotros</a></li>
+            <li><a href="./directorio.html">Directorio de Emprendedores</a></li>
+            <li><a href="./PromocionDeServicios.html">Promoción/Productos y Servicios</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./contactanos.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="main-header">
+        <h1>EMPRENDEDORES VALLE DE ABURRÁ</h1>
+        <div class="main-buttons">
+            <button class="btn-active" onclick="window.location.href='directorio.html'">Directorio</button>
+            <button onclick="window.location.href='colaboraciones.html'">Colaboraciones</button>
+            <button onclick="window.location.href='registro.html'">Registro</button>
+        </div>
+    </header>
+
+    <!-- Búsqueda y filtrado -->
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar emprendimiento">
+            <div class="category-filter">
+                <select id="categoria">
+                    <option value="" selected>Categoría</option>
+                    <option value="Alimentos">Alimentos</option>
+                    <option value="Artesanías">Artesanías</option>
+                    <option value="Tecnología">Tecnología</option>
+                    <option value="Servicios">Servicios</option>
+                    <option value="Moda">Moda</option>
+                    <option value="Salud y Bienestar">Salud y Bienestar</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="directory-container">
+            <!-- Listado de directorios (izquierda) -->
+            <div class="directory-list">
+                <!-- Las tarjetas se generarán dinámicamente desde JavaScript -->
+            </div>
+            
+            <!-- Detalle del directorio (derecha) -->
+            <div class="directory-detail">
+                <div class="detail-empty-state">
+                    <p>Selecciona un emprendimiento para ver más detalles</p>
+                </div>
+                <div class="detail-content" style="display: none;">
+                    <h2 id="detail-title">Nombre del Emprendimiento</h2>
+                    <span id="detail-category" class="category-tag">Categoría</span>
+                    
+                    <div class="detail-contact">
+                        <p><span class="emoji">📍</span> <span id="detail-location">Ubicación</span></p>
+                        <p><span class="emoji">📞</span> <span id="detail-phone">Teléfono</span></p>
+                        <p><span class="emoji">📧</span> <a id="detail-email" href="mailto:email@ejemplo.com">Email</a></p>
+                    </div>
+                    
+                    <div class="detail-description">
+                        <p id="detail-description">Descripción completa del emprendimiento.</p>
+                    </div>
+                    
+                    <div class="detail-map">
+                        <img id="detail-map" src="img/mapa-generico.jpg" alt="Mapa de ubicación">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <span>Copyright © 2025 Red De Apoyo Local</span>
+            <span>Powered by Real Estate</span>
+        </div>
+    </footer>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/+573245772397" class="whatsapp-icon" target="_blank">
+        <img src="img/whatshapIcon.jpeg" alt="WhatsApp">
+    </a>
+</body>
+</html>

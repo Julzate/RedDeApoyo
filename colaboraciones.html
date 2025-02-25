@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboraciones - Valle de Aburrá</title>
+    <link rel="stylesheet" href="colaboraciones.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+    <script src="colaboraciones.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/Logo.webp" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="./SobreNosotros.html">Sobre nosotros</a></li>
+            <li><a href="./directorio.html">Directorio de Emprendedores</a></li>
+            <li><a href="./PromocionDeServicios.html">Promoción/Productos y Servicios</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./contactanos.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="main-header">
+        <h1>EMPRENDEDORES VALLE DE ABURRÁ</h1>
+        <div class="main-buttons">
+            <button onclick="window.location.href='directorio.html'">Directorio</button>
+            <button class="btn-active">Colaboraciones</button>
+            <button onclick="window.location.href='registro.html'">Registro</button>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Submódulo Eventos -->
+        <section class="eventos-section active" id="eventos-section">
+            <div class="section-header">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-section="eventos">Eventos</button>
+                    <button class="tab-btn" data-section="ferias">Ferias</button>
+                </div>
+                <button class="register-btn" id="register-event-btn">Registrar evento</button>
+            </div>
+
+            <div class="eventos-container">
+                <div class="eventos-scroll">
+                    <!-- Las tarjetas se generarán dinámicamente desde JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Submódulo Ferias -->
+        <section class="ferias-section" id="ferias-section">
+            <div class="section-header">
+                <div class="tab-buttons">
+                    <button class="tab-btn" data-section="eventos">Eventos</button>
+                    <button class="tab-btn active" data-section="ferias">Ferias</button>
+                </div>
+                <button class="register-btn" id="register-feria-btn">Registrar feria</button>
+            </div>
+
+            <div class="ferias-container">
+                <div class="ferias-scroll">
+                    <!-- Las tarjetas se generarán dinámicamente desde JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para registrar evento -->
+    <div class="modal" id="event-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Registrar Nuevo Evento</h2>
+            <form id="event-form">
+                <div class="form-group">
+                    <label for="event-title">Título del Evento:</label>
+                    <input type="text" id="event-title" name="event-title" placeholder="Ej: Workshop: Marketing Digital" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-description">Descripción:</label>
+                    <textarea id="event-description" name="event-description" placeholder="Breve descripción del evento..." required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event-date">Fecha:</label>
+                        <input type="date" id="event-date" name="event-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-time">Hora:</label>
+                        <input type="time" id="event-time" name="event-time" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-location">Ubicación:</label>
+                    <input type="text" id="event-location" name="event-location" placeholder="Dirección o lugar del evento" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="event-participants">Participantes permitidos:</label>
+                        <input type="number" id="event-participants" name="event-participants" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-cost">Costo de entrada:</label>
+                        <input type="text" id="event-cost" name="event-cost" placeholder="Gratuito o valor en pesos">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-requirements">Requisitos:</label>
+                    <input type="text" id="event-requirements" name="event-requirements" placeholder="Requisitos para participar">
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-organizer">Organizador:</label>
+                    <input type="text" id="event-organizer" name="event-organizer" placeholder="Nombre de la empresa o persona organizadora" required>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancelar</button>
+                    <button type="submit" class="submit-btn">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para registrar feria -->
+    <div class="modal" id="feria-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Registrar Nueva Feria</h2>
+            <form id="feria-form">
+                <div class="form-group">
+                    <label for="feria-title">Título de la Feria:</label>
+                    <input type="text" id="feria-title" name="feria-title" placeholder="Ej: Feria de Emprendedores 2025" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feria-description">Descripción:</label>
+                    <textarea id="feria-description" name="feria-description" placeholder="Breve descripción de la feria..." required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="feria-date">Fecha:</label>
+                        <input type="date" id="feria-date" name="feria-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feria-time">Hora:</label>
+                        <input type="time" id="feria-time" name="feria-time" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feria-location">Ubicación:</label>
+                    <input type="text" id="feria-location" name="feria-location" placeholder="Dirección o lugar de la feria" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="feria-participants">Cupos para expositores:</label>
+                        <input type="number" id="feria-participants" name="feria-participants" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feria-products">Tipo de productos permitidos:</label>
+                        <input type="text" id="feria-products" name="feria-products" placeholder="Categorías de productos">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feria-requirements">Requisitos para expositores:</label>
+                    <input type="text" id="feria-requirements" name="feria-requirements" placeholder="Requisitos para participar">
+                </div>
+                
+                <div class="form-group">
+                    <label for="feria-organizer">Organizador:</label>
+                    <input type="text" id="feria-organizer" name="feria-organizer" placeholder="Nombre de la empresa o persona organizadora" required>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancelar</button>
+                    <button type="submit" class="submit-btn">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <span>Copyright © 2025 Red De Apoyo Local</span>
+            <span>Powered by Real Estate</span>
+        </div>
+    </footer>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/+573245772397" class="whatsapp-icon" target="_blank">
+        <img src="img/whatshapIcon.jpeg" alt="WhatsApp">
+    </a>
+</body>
+</html>

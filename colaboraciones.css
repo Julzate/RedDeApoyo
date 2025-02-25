@@ -1,0 +1,512 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    background-color: #f5f5dc; /* Beige claro para el fondo */
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #eaeaea;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0 0 10px 10px;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #428709; /* Verde oscuro al pasar el mouse */
+}
+
+/* Header principal */
+.main-header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f5f5dc; /* Beige para el encabezado */
+    border-bottom: 2px solid #428709; /* Borde verde */
+}
+
+.main-header h1 {
+    color: #000000;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.main-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.main-buttons button {
+    padding: 10px 20px;
+    background-color: #428709; /* Verde por defecto */
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+}
+
+.main-buttons button.btn-active {
+    background-color: #8bc34a; /* Verde claro para botón activo */
+}
+
+.main-buttons button:hover {
+    background-color: #8bc34a; /* Verde claro al pasar el mouse */
+}
+
+/* Contenido principal */
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Secciones Eventos y Ferias */
+.eventos-section, .ferias-section {
+    display: none;
+    margin-bottom: 30px;
+}
+
+.eventos-section.active, .ferias-section.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tab-buttons {
+    display: flex;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    background-color: #8bc34a;
+    color: white;
+}
+
+.register-btn {
+    padding: 10px 20px;
+    background-color: #428709;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #8bc34a;
+}
+
+/* Contenedor de eventos/ferias */
+.eventos-container, .ferias-container {
+    width: 100%;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.eventos-scroll, .ferias-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    gap: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #428709 #f0f0f0;
+}
+
+.eventos-scroll::-webkit-scrollbar, .ferias-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.eventos-scroll::-webkit-scrollbar-track, .ferias-scroll::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.eventos-scroll::-webkit-scrollbar-thumb, .ferias-scroll::-webkit-scrollbar-thumb {
+    background-color: #428709;
+    border-radius: 4px;
+}
+
+/* Tarjetas de eventos */
+.event-card, .feria-card {
+    min-width: 330px;
+    flex: 0 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-card:hover, .feria-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.card-hover-effect:not(:hover) {
+    filter: grayscale(40%) opacity(0.8);
+    transform: scale(0.98);
+}
+
+.card-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #8bc34a;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #428709;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.card-info-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 16px;
+}
+
+.card-info-item i {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+    color: #428709;
+}
+
+.card-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 15px 0;
+}
+
+.card-additional-info {
+    font-size: 15px;
+    color: #666;
+}
+
+.card-additional-info h4 {
+    margin-bottom: 8px;
+    color: #428709;
+}
+
+.card-additional-info ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.card-additional-info li {
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.card-additional-info li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #8bc34a;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.card-btn {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    background-color: #428709;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.card-btn:hover {
+    background-color: #8bc34a;
+}
+
+.card-link {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    color: #428709;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 16px;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1100;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: modal-open 0.3s ease-out;
+}
+
+@keyframes modal-open {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+.modal h2 {
+    font-size: 26px;
+    color: #428709;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-btn, .submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.cancel-btn {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.submit-btn {
+    background-color: #428709;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.submit-btn:hover {
+    background-color: #8bc34a;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #666;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-icon img {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .navbar ul {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-row .form-group {
+        margin-bottom: 0;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+}

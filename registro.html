@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Valle de Aburrá</title>
+    <link rel="stylesheet" href="registro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+    <script src="registro.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/Logo.webp" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="./SobreNosotros.html">Sobre nosotros</a></li>
+            <li><a href="./directorio.html">Directorio de Emprendedores</a></li>
+            <li><a href="./PromocionDeServicios.html">Promoción/Productos y Servicios</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./contactanos.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="main-header">
+        <h1>EMPRENDEDORES VALLE DE ABURRÁ</h1>
+        <div class="main-buttons">
+            <button onclick="window.location.href='directorio.html'">Directorio</button>
+            <button onclick="window.location.href='colaboraciones.html'">Colaboraciones</button>
+            <button class="btn-active">Registro</button>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="registro-container">
+            <!-- Navegación de pasos -->
+            <div class="steps-nav">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Información Básica</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Detalles del Negocio</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Multimedia</div>
+                </div>
+            </div>
+
+            <!-- Formularios para cada paso -->
+            <div class="form-sections">
+                <!-- Paso 1: Información Básica -->
+                <section class="form-section active" id="step-1">
+                    <h2>Información Básica</h2>
+                    <div class="form-group">
+                        <label for="nombre-emprendimiento">Nombre del Emprendimiento</label>
+                        <input type="text" id="nombre-emprendimiento" name="nombre-emprendimiento" placeholder="Ej: Café del Valle">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria-principal">Categoría Principal</label>
+                        <select id="categoria-principal" name="categoria-principal">
+                            <option value="" selected disabled>Selecciona una categoría</option>
+                            <option value="alimentos">Alimentos</option>
+                            <option value="artesanias">Artesanías</option>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="servicios">Servicios</option>
+                            <option value="moda">Moda</option>
+                            <option value="salud">Salud y Bienestar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion-corta">Descripción Corta</label>
+                        <textarea id="descripcion-corta" name="descripcion-corta" placeholder="Describe tu emprendimiento en pocas palabras..."></textarea>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-anterior" disabled>Anterior</button>
+                        <button class="btn-siguiente" data-next="2">Siguiente</button>
+                    </div>
+                </section>
+
+                <!-- Paso 2: Detalles del Negocio -->
+                <section class="form-section" id="step-2">
+                    <h2>Detalles del Negocio</h2>
+                    <div class="form-group">
+                        <label for="ubicacion">Ubicación</label>
+                        <input type="text" id="ubicacion" name="ubicacion" placeholder="Dirección o zona de operación">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono de Contacto</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+57 300 123 4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="tu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Redes Sociales</label>
+                        <input type="text" id="instagram" name="instagram" placeholder="Instagram (opcional)">
+                        <input type="text" id="facebook" name="facebook" placeholder="Facebook (opcional)">
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-anterior" data-prev="1">Anterior</button>
+                        <button class="btn-siguiente" data-next="3">Siguiente</button>
+                    </div>
+                </section>
+
+                <!-- Paso 3: Multimedia -->
+                <section class="form-section" id="step-3">
+                    <h2>Multimedia</h2>
+                    <div class="form-group">
+                        <label>Logo del Emprendimiento</label>
+                        <div class="upload-area" id="logo-upload">
+                            <div class="upload-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 16L12 8" stroke="#428709" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 11L12 8L15 11" stroke="#428709" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 16H16" stroke="#428709" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="upload-text">
+                                Sube un archivo o arrastra y suelta<br>
+                                <span class="upload-format">PNG, JPG hasta 10MB</span>
+                            </div>
+                            <input type="file" id="logo-file" class="file-input" accept="image/*">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Imágenes de Productos o Servicios</label>
+                        <div class="upload-product-area" id="product-upload">
+                            <div class="upload-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 5V19" stroke="#428709" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12H19" stroke="#428709" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="upload-text">Añadir imagen</div>
+                            <input type="file" id="product-file" class="file-input" accept="image/*" multiple>
+                        </div>
+                        <div class="product-images-preview" id="product-images-preview"></div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-anterior" data-prev="2">Anterior</button>
+                        <button class="btn-finalizar">Finalizar Registro</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de confirmación -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="success-icon">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999" stroke="#428709" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 4L12 14.01L9 11.01" stroke="#428709" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h2>¡Registro completado con éxito!</h2>
+            <p>Tu emprendimiento ha sido registrado correctamente y ya forma parte de nuestro directorio.</p>
+            <div class="modal-buttons">
+                <button class="btn-directorio">Ver en Directorio</button>
+                <button class="btn-home">Volver al Inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <span>Copyright © 2025 Red De Apoyo Local</span>
+            <span>Powered by Real Estate</span>
+        </div>
+    </footer>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/+573245772397" class="whatsapp-icon" target="_blank">
+        <img src="img/whatshapIcon.jpeg" alt="WhatsApp">
+    </a>
+</body>
+</html>
