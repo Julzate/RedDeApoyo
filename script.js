@@ -1,35 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const carouselContainer = document.querySelector('.carousel-container');
-    const carouselItems = document.querySelectorAll('.carousel-item');
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector("[data-carousel]");
+    const slidesContainer = carousel.querySelector("[data-slides]");
+    const slides = Array.from(carousel.querySelectorAll(".slide-info"));
+    const prevButton = carousel.querySelector(".btn-left");
+    const nextButton = carousel.querySelector(".btn-right");
     let currentIndex = 0;
-    
-    // Function to move the carousel
-    function moveCarousel() {
-        if (currentIndex >= carouselItems.length) {
-            currentIndex = 0; // Reset to the first item
-        }
 
-        // Move the carousel to the new position
-        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    function updateSlide() {
+        slides.forEach((slide, index) => {
+            slide.style.display = index === currentIndex ? "block" : "none";
+        });
     }
 
-    // Button click events for manual navigation
-    const prevButton = document.querySelector('.btn-left');
-    const nextButton = document.querySelector('.btn-right');
-
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex === 0) ? carouselItems.length - 1 : currentIndex - 1;
-        moveCarousel();
+    prevButton.addEventListener("click", function () {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+        updateSlide();
     });
 
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex === carouselItems.length - 1) ? 0 : currentIndex + 1;
-        moveCarousel();
+    nextButton.addEventListener("click", function () {
+        currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+        updateSlide();
     });
 
-    // Automatic slide change every 5 seconds
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % carouselItems.length;
-        moveCarousel();
-    }, 5000); // 5000 milliseconds = 5 seconds
+    updateSlide(); // Inicializar la visibilidad de los slides
 });
