@@ -27,7 +27,8 @@ body {
 }
 
 .navbar ul li {
-    display: inline;
+    display: inline-block;
+    position: relative;
     margin-right: 20px;
 }
 
@@ -45,6 +46,34 @@ body {
     color: #6a0dad; 
     font-size: 18px;
 }
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    min-width: 250px;
+    display: none;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    margin-left: 15px;
+
+}
+
+.dropdown a {
+    padding: 6px 20px;
+    display: block;
+    color: white;
+}
+
+
+
+/* Mostrar dropdown cuando el mouse pasa sobre el elemento */
+.navbar ul li:hover .dropdown {
+    background-color: transparent;
+    display: block;
+    border-left: 5px solid purple;
+}
+
 
 header {
     display: flex;
