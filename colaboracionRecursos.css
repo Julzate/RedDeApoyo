@@ -110,6 +110,11 @@ nav a {
     padding: 40px 20px;
 }
 
+.recursos{
+    margin-right: 75px;
+    margin-left: 75px;
+}
+
 .card {
     padding: 20px;
     border: 1px solid #f6bc98;
@@ -141,9 +146,20 @@ h3 {
     font-size: 80px; /* Más pequeño */
     font-weight: 400;
     margin-top: 0;
-    text-align: center
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
+.recursos-item{
+    display: flex;
+    flex-direction: column;
+    margin-left: 130px;
+}
+
+.recursos-item p{
+    font-size: 17px;
+}
 
 .video-container {margin: 0;
 display: flex;

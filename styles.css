@@ -112,26 +112,34 @@ h2{
     font-weight: bold;
 }
 
-.btn-telefono{
+.btn-registrate{
     background-color: #fa0000;
-    padding: 15px 30px;
-    color: white;
-    font-weight: bold;
+    padding: 10px 25px;
     box-shadow: 0px 18px 40px -10px #000;
     transition: box-shadow 0.3s ease;
     border-radius: 50px;
 }
 
-.btn-telefono:hover{
+.btn-registrate a{
+    font-size: 17px;
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+
+}
+
+.btn-registrate:hover{
     cursor: pointer;
     box-shadow: none;
 }
 
-.btn-unete{
+.btn-sesion{
+    font-family: Helvetica, sans-serif;
     background-color: #f6f6f6;
-    font-size: 16px;
+    color: #111010;
+    font-size: 26px;
     border: 0px;
-    padding: 15px 40px;  
+    padding: 10px 38px;  
     box-shadow: 0px 18px 40px -10px #000;
     border-radius: 50px;
     border: solid transparent;
@@ -139,7 +147,7 @@ h2{
 
 
 
-.btn-unete:hover{
+.btn-sesion:hover{
     cursor: pointer;    
     background-color: transparent;
     color: white;
