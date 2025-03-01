@@ -52,6 +52,8 @@ body {
 }
 
 .navbar ul li a:hover {
+    z-index: 1;
+    background-color: #eaeaea;
     color: #428709; 
     font-size: 18px;
 }
@@ -77,7 +79,7 @@ body {
 .navbar ul li:hover .dropdown {
     background-color: transparent;
     display: block;
-    border-left: 5px solid 428709;
+    border-left: 5px solid #428709;
 }
 
 /* Header principal */

@@ -43,6 +43,8 @@ body {
 }
 
 .navbar ul li a:hover {
+    z-index: 1;
+    background-color: #eaeaea;
     color: #6a0dad; 
     font-size: 18px;
 }

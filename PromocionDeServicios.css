@@ -9,45 +9,69 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #eaeaea;   /* Color de fondo */
-    padding: 15px;               /* Espaciado interno */
-    display: flex;               /* Usa flexbox para alineación */
-    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
-    align-items: center;         /* Centra verticalmente */
-    position: sticky;            /* Navbar fija al hacer scroll */
-    top: 0;                      /* Se queda en la parte superior */
-    z-index: 1000;               /* Se asegura de estar sobre otros elementos */
+    background-color: #eaeaea;
+    padding: 15px;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-
 .navbar .logo img {
-    height: 50px;                /* Ajusta la altura del logo */
+    height: 50px;
     border-radius: 50%;
-}
 
-/* Lista de enlaces */
+}
 .navbar ul {
-    list-style: none;            /* Quita los puntos de la lista */
-    padding: 0;                  /* Elimina el padding por defecto */
-    margin: 0;                   /* Elimina el margen por defecto */
-    display: flex;               /* Flexbox para los enlaces */
-    gap: 20px;                   /* Espacio uniforme entre los elementos */
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Estilo de los enlaces */
+.navbar ul li {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+}
+
 .navbar ul li a {
     font-family: Arial, sans-serif;
-    text-decoration: none;       /* Quita el subrayado */
-    color: black;                /* Color del texto */
-    font-weight: bold;           /* Texto en negrita */
-    transition: color 0.3s;      /* Transición suave al cambiar el color */
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
     transition: font-size 0.3s ease;
 }
 
-/* Efecto hover */
 .navbar ul li a:hover {
-    color: #6a0dad;              /* Cambia a morado al pasar el mouse */
+    z-index: 1;
+    background-color: #eaeaea;
+    color: #6a0dad; 
     font-size: 18px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    min-width: 250px;
+    display: none;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+.dropdown a {
+    padding: 6px 20px;
+    display: block;
+    color: white;
+}
+
+
+        /* Mostrar dropdown cuando el mouse pasa sobre el elemento */
+.navbar ul li:hover .dropdown {
+    background-color: #eaeaea;
+    display: block;
+    border-left: 5px solid purple;
 }
 
 
